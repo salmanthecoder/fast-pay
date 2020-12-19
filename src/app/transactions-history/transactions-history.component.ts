@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {TransactionsService} from "../transactions.service";
+import {Transaction} from "../model/Transaction";
 
 @Component({
   selector: 'app-transactions-history',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionsHistoryComponent implements OnInit {
 
-  constructor() { }
+  public transactions: Observable<Transaction[]>;
+  constructor(private transactionsService: TransactionsService) { }
 
   ngOnInit(): void {
+    this.transactions = this.transactionsService.get();
+    console.log(this.transactions);
   }
 
 }
