@@ -8,7 +8,7 @@ import {TransactionsService} from "../transactions.service";
 @Component({
   selector: 'app-transaction-preview',
   templateUrl: './transaction-preview.component.html',
-  styleUrls: ['./transaction-preview.component.scss'],
+  styleUrls: ['./transaction-preview.component.css'],
 })
 export class TransactionPreviewComponent implements OnInit {
   name: string;

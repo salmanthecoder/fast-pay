@@ -10,7 +10,7 @@ export enum filters {
 @Component({
   selector: 'app-transactions-detail',
   templateUrl: './transactions-detail.component.html',
-  styleUrls: ['./transactions-detail.component.scss'],
+  styleUrls: ['./transactions-detail.component.css'],
 })
 export class TransactionsDetailComponent implements OnInit {
 

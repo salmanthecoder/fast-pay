@@ -5,7 +5,7 @@ import { TransactionPreviewComponent } from '../transaction-preview/transaction-
 @Component({
   selector: 'app-make-transaction',
   templateUrl: './make-transaction.component.html',
-  styleUrls: ['./make-transaction.component.scss']
+  styleUrls: ['./make-transaction.component.css']
 })
 export class MakeTransactionComponent implements OnInit {
 

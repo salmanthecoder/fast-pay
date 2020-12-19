@@ -7,7 +7,7 @@ import {TransactionsService} from "../transactions.service";
 @Component({
   selector: 'app-transactions-history',
   templateUrl: './transactions-history.component.html',
-  styleUrls: ['./transactions-history.component.scss']
+  styleUrls: ['./transactions-history.component.css']
 })
 export class TransactionsHistoryComponent implements OnInit {
 

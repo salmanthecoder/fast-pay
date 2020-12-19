@@ -6,7 +6,7 @@ import { filters } from '../transactions-detail/transactions-detail.component';
 @Component({
   selector: 'app-search-transactions',
   templateUrl: './search-transactions.component.html',
-  styleUrls: ['./search-transactions.component.scss'],
+  styleUrls: ['./search-transactions.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchTransactionsComponent implements OnInit {
