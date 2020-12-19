@@ -1,1 +1,25 @@
-<p>make-transaction works!</p>
+<h3 i18n="@@make-transer">
+    Make a Transfer
+</h3>
+<form>
+    <fieldset>
+        <label i18n="@@from_account">From Account</label>
+        <input type="text" i18n-placeholder="@@from_account_place" placeholder="Free Checking(4692) - ${{initialAmount}}" disabled>
+    </fieldset>
+
+    <fieldset>
+        <label i18n="@@to_account">To Account</label>
+        <input name="accountName"
+        [(ngModel)]="accountName" required i18n-placeholder="@@to_account_place" placeholder="Please enter name">
+    </fieldset>
+
+    <fieldset>
+        <label i18n="@@amount">Amount</label>
+        <input type="text"  [(ngModel)]="amount" i18n-placeholder="@@amount_place" name="amount" required placeholder="$ 0.00">
+    </fieldset>
+    <fieldset *ngIf="hasError">
+        <label class="error" i18n="@@error_message">{{errorMessage}}</label>
+    </fieldset>
+    <button (click)="preview($event)" i18n="@@submit">Submit</button>
+    
+</form>

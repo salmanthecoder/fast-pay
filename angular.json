@@ -5,10 +5,22 @@
   "projects": {
     "fast-pay": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "nl": {
+            "translation": "src/locale/messages.nl.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -17,6 +29,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
+            "localize": true,
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -56,6 +69,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "nl": {
+              "localize": ["nl"]
             }
           }
         },
@@ -67,6 +83,9 @@
           "configurations": {
             "production": {
               "browserTarget": "fast-pay:build:production"
+            },
+            "nl": {
+              "browserTarget": "fast-pay:build:nl"
             }
           }
         },
