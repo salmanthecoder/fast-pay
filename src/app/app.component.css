@@ -1,0 +1,78 @@
+.lang {
+    float: right;
+  }
+  
+  @media only screen and (min-width: 769px) {
+  
+    .container {
+      padding-top: 5%;
+      padding-left: 10%;
+      width: 80%;
+      float: center;
+    }
+    
+    .make-transaction {
+      width: 33%;
+      float: left;
+      padding-right: 2%;
+    }
+    
+    .transaction-detail {
+      float: left;
+      width: 65%;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 499px) and(max-width:768px) {
+    .container {
+      padding-top: 6%;
+      width: 100%;
+    }
+    
+    .make-transaction {
+      width: 100%;
+      padding-top: 10px;
+      padding-right: 0%;
+    }
+    
+    .transaction-detail {
+      float: center;
+      padding-top: 10px;
+    }
+  
+    .search {
+      width: 100%;
+      float: left;
+      padding-right: 2%;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 500px) {
+    .container {
+      padding-top: 6%;
+      width: 100%;
+    }
+    
+    .make-transaction {
+      width: 100%;
+      padding-top: 10px;
+      padding-right: 0%;
+    }
+    
+    .transaction-detail {
+      float: center;
+      padding-top: 10px;
+    }
+  
+    .search {
+      width: 100%;
+      float: left;
+      padding-right: 2%;
+    }
+  }
+  
+    
+   
+  

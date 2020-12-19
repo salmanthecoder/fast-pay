@@ -1,1 +1,15 @@
-<p>transactions-detail works!</p>
+<app-search-transactions (onSearch)="handleSearch($event)" (onFilter)="handleSort($event)"></app-search-transactions>
+    <ul>
+        <li *ngFor="let log of transactionsDetails">
+            <span class="bar" [style.backgroundColor]="log.categoryCode"></span>
+            <span class="date">{{log.dates.valueDate | date:'MMM d'}}</span>
+            <span class="image"><img width="40" src="assets/icons/{{log.merchant.name | removewhitespace | lowercase}}.png "></span>
+            <span class="transactionType">
+                <p>
+                    <strong>{{log.merchant.name}}</strong>
+                    {{log.transaction.type}}
+                </p>
+            </span>
+            <span class="amount">{{log.transaction.amountCurrency.amount | creditdebitindicator: log.transaction.creditDebitIndicator| currency:log.transaction.amountCurrency.currencyCode:true}}</span>
+        </li>
+    </ul>

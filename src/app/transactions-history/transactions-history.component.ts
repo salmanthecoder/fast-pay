@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {TransactionsService} from "../transactions.service";
 import {Transaction} from "../model/Transaction";
+import {Observable} from "rxjs";
+import { of } from 'rxjs';
+import {TransactionsService} from "../transactions.service";
 
 @Component({
   selector: 'app-transactions-history',
   templateUrl: './transactions-history.component.html',
-  styleUrls: ['./transactions-history.component.css']
+  styleUrls: ['./transactions-history.component.scss']
 })
 export class TransactionsHistoryComponent implements OnInit {
 
@@ -14,8 +15,9 @@ export class TransactionsHistoryComponent implements OnInit {
   constructor(private transactionsService: TransactionsService) { }
 
   ngOnInit(): void {
-    this.transactions = this.transactionsService.get();
-    console.log(this.transactions);
+    this.transactionsService.observableTransactions.subscribe(value => {
+      this.transactions = of(value);
+    });
+    this.transactions = this.transactionsService.getTransactions();
   }
-
 }

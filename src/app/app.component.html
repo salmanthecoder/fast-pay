@@ -1,5 +1,19 @@
-<app-make-transaction></app-make-transaction>
-<app-search-transactions></app-search-transactions>
-<app-transaction-preview></app-transaction-preview>
-<app-transactions-detail></app-transactions-detail>
-<app-transactions-history></app-transactions-history>
+
+<ng-container  *ngFor="let language of languageList"> <a href="/{{language.code}}/" class="lang"> <button class="button">{{language.label}}</button> </a></ng-container>
+<section class="container">
+    <div class="make-transaction">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-content>
+              <app-make-transaction></app-make-transaction>
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div class="transaction-detail">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-content>
+              <app-transactions-history></app-transactions-history>
+            </mat-card-content>
+          </mat-card>
+    </div>
+  </section>
+
