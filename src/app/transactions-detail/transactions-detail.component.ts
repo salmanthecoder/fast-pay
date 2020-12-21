@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {TransactionsService} from "../transactions.service";
-import {Transaction} from "../model/Transaction";
+import { TransactionsService } from '../transactions.service';
+import { Transaction } from '../model/Transaction';
 
 export enum filters {
-  date = 1 ,
+  date = 1,
   beneficiaries = 2,
-  amount = 3
+  amount = 3,
 }
 @Component({
   selector: 'app-transactions-detail',
@@ -13,38 +13,47 @@ export enum filters {
   styleUrls: ['./transactions-detail.component.css'],
 })
 export class TransactionsDetailComponent implements OnInit {
-
-  public sortByDate = false;
-  public sortByBeneficiaries = false;
-  public sortByAmount = false;
+  public sortByDate = true;
+  public sortByBeneficiaries = true;
+  public sortByAmount = true;
   public transactionsDetails;
   private transactionsBackup;
 
   @Input('transactions')
   set transactions(value: Transaction[]) {
     this.transactionsDetails = this.transactionsBackup = value;
-    if(this.transactionsDetails && this.transactionsDetails.length !== 0) {
-      this.sortByDate = false;
+    if (this.transactionsDetails && this.transactionsDetails.length !== 0) {
+      this.sortByDate = true;
       this.handleSortDate();
     }
-    
   }
-  constructor(private _transService: TransactionsService) {
-  }
+  constructor() {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit(): void {}
 
-  handleSearch(term) {
+  /**
+   * handleSearch
+   * handle search
+   * @param term contain value to search on details
+   * @returns void
+   */
+  handleSearch(term): void {
     this.transactionsDetails = this.transactionsBackup;
     if (term.length === 0) {
       return;
     }
-    this.transactionsDetails = this.transactionsDetails.filter(obj => obj.merchant.name.toLowerCase().indexOf(term.toLowerCase()) !== -1);
+    this.transactionsDetails = this.transactionsDetails.filter(
+      (obj) =>
+        obj.merchant.name.toLowerCase().indexOf(term.toLowerCase()) !== -1
+    );
   }
-
-  handleSort(type) {
+  /**
+   * handleSort
+   * handle sort type
+   * @param type contain value to sort on
+   * @returns void
+   */
+  handleSort(type): void {
     switch (type) {
       case filters.date:
         this.handleSortDate();
@@ -57,36 +66,56 @@ export class TransactionsDetailComponent implements OnInit {
         break;
     }
   }
-
-  handleSortDate() {
+  /**
+   * handleSortDate
+   * handle sort date
+   * @returns void
+   */
+  handleSortDate(): void {
     this.sortByDate = !this.sortByDate;
-    this.transactionsDetails = this.transactionsDetails.sort((logA: Transaction, logB: Transaction) => {
-      const dateA =  new Date(logA.dates.valueDate).getTime();  
-      const dateB =  new Date(logB.dates.valueDate).getTime();
-      if (this.sortByDate) {
-        return dateB - dateA;
-      } else {
-        return dateA - dateB;
+    this.transactionsDetails = this.transactionsDetails.sort(
+      (logA: Transaction, logB: Transaction) => {
+        const dateA = new Date(logA.dates.valueDate).getTime();
+        const dateB = new Date(logB.dates.valueDate).getTime();
+        // this.sortByDate => false is desecnding
+        if (this.sortByDate) {
+          return dateA - dateB;
+        } else {
+          return dateB - dateA;
+        }
       }
-    });
+    );
   }
-
-  handleSortBeneficiaries() {
+  /**
+   * handleSortBeneficiaries
+   * handle sort beneficiaries
+   * @returns void
+   */
+  handleSortBeneficiaries(): void {
     this.sortByBeneficiaries = !this.sortByBeneficiaries;
-    this.transactionsDetails = this.transactionsDetails.sort((a: Transaction, b: Transaction) => {
-      if (this.sortByBeneficiaries) {
-        return a.merchant.name.localeCompare(b.merchant.name);
-      } else {
-        return b.merchant.name.localeCompare(a.merchant.name);
+    this.transactionsDetails = this.transactionsDetails.sort(
+      (a: Transaction, b: Transaction) => {
+        // this.sortByBeneficiaries => false is desecnding
+        if (this.sortByBeneficiaries) {
+          return a.merchant.name.localeCompare(b.merchant.name);
+        } else {
+          return b.merchant.name.localeCompare(a.merchant.name);
+        }
       }
-    });
+    );
   }
 
-  handleSortAmount() {
+  /**
+   * handleSortAmount
+   * handle sort amount
+   * @returns void
+   */
+  handleSortAmount(): void {
     this.sortByAmount = !this.sortByAmount;
     this.transactionsDetails = this.transactionsDetails.sort((a, b) => {
       const amountA = parseFloat(a.transaction.amountCurrency.amount);
       const amountB = parseFloat(b.transaction.amountCurrency.amount);
+      // this.sortByAmount => false is desecnding
       if (this.sortByAmount) {
         return amountA - amountB;
       } else {

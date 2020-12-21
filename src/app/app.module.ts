@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import '@angular/localize/init'
-import {MatDialogModule} from '@angular/material/dialog';
+import '@angular/localize/init';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MakeTransactionComponent } from './make-transaction/make-transaction.component';
@@ -17,8 +17,8 @@ import { TransactionsHistoryComponent } from './transactions-history/transaction
 import { TransactionsDetailComponent } from './transactions-detail/transactions-detail.component';
 import { TransactionPreviewComponent } from './transaction-preview/transaction-preview.component';
 import { TransactionsService } from './transactions.service';
-import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
 import { CreditDebitIndicatorPipe } from './credit-debit-indicator.pipe';
+import { ConvertSpaceToDashPipe } from './convert-space-to-dash.pipe';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { CreditDebitIndicatorPipe } from './credit-debit-indicator.pipe';
     TransactionsHistoryComponent,
     TransactionsDetailComponent,
     TransactionPreviewComponent,
-    RemoveWhiteSpacePipe,
-    CreditDebitIndicatorPipe
+    CreditDebitIndicatorPipe,
+    ConvertSpaceToDashPipe,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +40,18 @@ import { CreditDebitIndicatorPipe } from './credit-debit-indicator.pipe';
     MatCardModule,
     MatButtonModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { hasBackdrop: true }, }, TransactionsService, { provide: LOCALE_ID, useValue: 'en-US' }],
-  bootstrap: [AppComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { hasBackdrop: true },
+    },
+    TransactionsService,
+    { provide: LOCALE_ID, useValue: 'en-US' },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
