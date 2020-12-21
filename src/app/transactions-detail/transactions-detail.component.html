@@ -26,3 +26,10 @@
     }}</span>
   </li>
 </ul>
+<div *ngIf="transactionsDetails && transactionsDetails.length ===0" i18n="@@transactionsDetails_no" class="error">
+    No recent transactions
+  </div>
+<div *ngIf="!transactionsDetails" i18n="@@transactionsDetails_undefined" class="error">
+    Sorry something is wrong, Please try again later
+  </div>
+  

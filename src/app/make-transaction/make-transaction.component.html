@@ -5,7 +5,7 @@
   class="example-form"
 >
   <fieldset>
-    <label i18n="@@from_account">From Account</label>
+    <label for="from account" i18n="@@from_account">From Account</label>
     <input
       type="text"
       i18n-placeholder="@@from_account_place"
@@ -15,7 +15,7 @@
   </fieldset>
 
   <fieldset>
-    <label i18n="@@to_account">To Account</label>
+    <label for="to account" i18n="@@to_account">To Account</label>
     <input
       name="accountName"
       formControlName="accountName"
@@ -27,7 +27,7 @@
   </fieldset>
 
   <fieldset>
-    <label i18n="@@amount">Amount</label>
+    <label for="amount" i18n="@@amount">Amount</label>
     <input
       type="text"
       [(ngModel)]="amount"
@@ -66,5 +66,5 @@
       Overdraft amount cannot be more then 500
     </div>
   </div>
-  <button (click)="preview($event)" i18n="@@submit">Submit</button>
+  <button (click)="preview($event)" i18n="@@submit" aria-label="Sumit">Submit</button>
 </form>

@@ -6,7 +6,7 @@ import { Component, LOCALE_ID, Inject } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'fast-pay';
+  title = 'fast-payment';
   languageList = [
     { code: 'en-US', label: 'EN' },
     { code: 'nl', label: 'NL' },
