@@ -12,7 +12,7 @@ import { ValidatorOneParam } from './validation';
   styleUrls: ['./make-transaction.component.css'],
 })
 export class MakeTransactionComponent implements OnInit {
-  initialAmount = '5824.76';
+  initialAmount = 5824.76;
   accountName: string;
   amount: string;
   errorMessage = '';
@@ -32,7 +32,7 @@ export class MakeTransactionComponent implements OnInit {
         Validators.required,
         Validators.maxLength(6),
         Validators.pattern(regexPattern),
-        this.overdraftDifferenceValidator(this.initialAmount),
+        this.overdraftDifferenceValidator(this.initialAmount).bind(this),
       ]),
     });
   }
@@ -88,10 +88,9 @@ export class MakeTransactionComponent implements OnInit {
    * @returns void
    */
   reset(): void {
-    const diff = this.overdraftDifference();
+    this.initialAmount = this.overdraftDifference();
     this.amount = '';
     this.accountName = '';
-    this.initialAmount = diff.toString();
     this.formSubmitted = false;
   }
 
@@ -101,8 +100,8 @@ export class MakeTransactionComponent implements OnInit {
    * @returns float
    */
   overdraftDifference(): any {
-    const diff = parseFloat(this.initialAmount) - parseFloat(this.amount);
-    return diff.toFixed(2);
+    const diff = Number(this.initialAmount) - parseFloat(this.amount);
+    return Number(diff.toFixed(2));
   }
 
   /**
@@ -110,10 +109,10 @@ export class MakeTransactionComponent implements OnInit {
    * custom validator for overdraftDifference
    * @returns validationError
    */
-  overdraftDifferenceValidator(initialAmount: string): ValidatorOneParam {
+  overdraftDifferenceValidator(initialAmount: number): ValidatorOneParam {
     return (control: AbstractControl): ValidationErrors | null => {
       const amount = control.value;
-      const diff = parseFloat(initialAmount) - parseFloat(amount);
+      const diff = this.initialAmount - parseFloat(amount);
       if (Number(diff.toFixed(2)) < -GlobalConstants.overdraft) {
         return { overdraftDifferenceValidator: true };
       }
