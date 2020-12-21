@@ -1,0 +1,142 @@
+.container {
+  height: 100px;
+}
+
+.search {
+  width: 30%;
+  float: left;
+  padding-right: 10px;
+}
+
+.search-filter {
+  float: left;
+}
+
+.search-filter {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  min-height: 20px;
+}
+
+.search-filter > div {
+  padding-top: 15px;
+}
+
+.search input {
+  min-width: 250px;
+  border: none;
+  border-bottom: 1px solid #cacaca;
+  padding: 5px 0;
+  padding-top: 16px;
+  text-indent: 10px;
+  outline: none;
+  margin: 0;
+}
+
+.search input,
+.filters i,
+.filters span {
+  font-size: 16px;
+}
+
+.filters i,
+.filters span {
+  display: block;
+  float: left;
+}
+.filters span {
+  padding: 5px 21px;
+}
+
+.filters i {
+  padding: 5px;
+}
+.filters span {
+  border-right: none;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #cacaca;
+}
+.filters span:last-child {
+  border-right: 1px solid #cacaca;
+}
+.filters span.up:before,
+.filters span.down:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 7px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+}
+
+.filters span.up:before {
+  border-width: 0 5px 10px 5px;
+  border-color: transparent transparent #cacaca transparent;
+}
+
+.filters span.down:before {
+  border-width: 10px 5px 0 5px;
+  border-color: #cacaca transparent transparent transparent;
+}
+
+@media only screen and (min-width: 499px) and(max-width:769px) {
+  .search {
+    width: 100%;
+    float: left;
+    padding-right: 2%;
+  }
+  .container-search {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  .search input {
+    border: none;
+    min-width: 150px;
+    padding-top: 16px;
+    text-indent: 10px;
+    outline: none;
+    margin: 0;
+    border-bottom: 1px solid #cacaca;
+    padding: 5px 0;
+  }
+  .search-filter {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .search-filter {
+    float: right;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .search {
+    width: 100%;
+    float: left;
+    padding-right: 2%;
+  }
+
+  .container-search {
+    padding-bottom: 100px;
+  }
+
+  .filters > span {
+    width: 86%;
+    border: 1px solid #cacaca;
+  }
+  .search input {
+    width: 100%;
+  }
+
+  .search-filter {
+    float: left;
+  }
+}

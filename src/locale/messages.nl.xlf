@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="transfer_money_dialog" datatype="html">
+        <source>Transfer Money</source>
+        <target>Geld overmaken</target> 
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/transaction-preview/transaction-preview.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="from_account_dialog" datatype="html">
+        <source><x id="START_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;mat-label&gt;"/>From Account: <x id="START_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;Strong&gt;"/>Free Checking(4692)<x id="CLOSE_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;/Strong&gt;"/><x id="CLOSE_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;/mat-label&gt;"/> </source>
+        <target><x id="START_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;mat-label&gt;"/>Van account: <x id="START_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;Strong&gt;"/>Free Checking(4692)<x id="CLOSE_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;/Strong&gt;"/><x id="CLOSE_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;/mat-label&gt;"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/transaction-preview/transaction-preview.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_dialog" datatype="html">
+        <source><x id="START_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;mat-label&gt;"/>To Account: <x id="START_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;Strong&gt;"/><x id="INTERPOLATION" equiv-text="{{name}}"/><x id="CLOSE_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;/Strong&gt;"/><x id="CLOSE_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;/mat-label&gt;"/></source>
+        <target><x id="START_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;mat-label&gt;"/>Verklaren: <x id="START_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;Strong&gt;"/><x id="INTERPOLATION" equiv-text="{{name}}"/><x id="CLOSE_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;/Strong&gt;"/><x id="CLOSE_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;/mat-label&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/transaction-preview/transaction-preview.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_dialog" datatype="html">
+        <source><x id="START_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;mat-label&gt;"/>Amount:  <x id="START_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;Strong&gt;"/>$ <x id="INTERPOLATION" equiv-text="{{amount}}"/><x id="CLOSE_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;/Strong&gt;"/><x id="CLOSE_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;/mat-label&gt;"/></source>
+        <target><x id="START_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;mat-label&gt;"/>Bedrag:  <x id="START_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;Strong&gt;"/>$ <x id="INTERPOLATION" equiv-text="{{amount}}"/><x id="CLOSE_TAG_STRONG" ctype="x-Strong" equiv-text="&lt;/Strong&gt;"/><x id="CLOSE_TAG_MAT-LABEL" ctype="x-mat-label" equiv-text="&lt;/mat-label&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/transaction-preview/transaction-preview.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="transfer_button_dialog" datatype="html">
+        <source>Transfer</source>
+        <target>Overdracht</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/transaction-preview/transaction-preview.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="make-transer" datatype="html">
+        <source>
+    Make a Transfer
+</source>
+<target>Maak een overboeking</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="from_account" datatype="html">
+        <source>From Account</source>
+        <target>Van account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_place" datatype="html">
+        <source>Please enter name</source>
+        <target>Voer een naam in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account" datatype="html">
+        <source>To Account</source>
+        <target>Verklaren</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount" datatype="html">
+        <source>Amount</source>
+        <target>Bedrag</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-transactions/search-transactions.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="error_message" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{errorMessage}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_error" datatype="html">
+        <source>Please enter &quot;To Account&quot;</source>
+        <target>Voer naar account in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_error" datatype="html">
+        <source>Please enter &quot;Amount&quot;</source>
+        <target>Voer een bedrag in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_min_error" datatype="html">
+        <source>Account name should be minimum 3 character</source>
+        <target>Accountnaam moet minimaal 3 tekens lang zijn</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_max_error" datatype="html">
+        <source>Account name can not be more than 60 characters</source>
+        <target>Accountnaam mag niet langer zijn dan 60 tekens</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_max_error" datatype="html">
+        <source>Max amount tranfer possible is 99999</source>
+        <target>Het maximale bedrag dat kan worden overgemaakt is 99999</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_valid_error" datatype="html">
+        <source>Please enter valid &quot;Amount&quot;</source>
+        <target>Het maximale bedrag dat kan worden overgemaakt is 99999</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_overdraft_error" datatype="html">
+        <source>Overdraft amount cannot be more then 500</source>
+        <target>Het debetbedrag kan niet hoger zijn dan 500</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="submit" datatype="html">
+        <source>Submit</source>
+        <target>Verzenden</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search_by_typing_place" datatype="html">
+        <source>Search by typing..</source>
+        <target>Zoeken door te typen ..</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-transactions/search-transactions.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sort_by" datatype="html">
+        <source>Sort by</source>
+        <target>Sorteer op</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-transactions/search-transactions.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="date" datatype="html">
+        <source>Date</source>
+        <target>Datum</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-transactions/search-transactions.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="beneficiaries" datatype="html">
+        <source>Beneficiaries</source>
+        <target>Begunstigden</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-transactions/search-transactions.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="recent_transactions_id" datatype="html">
+        <source> Recent Transactions</source>
+        <target>Recente transacties</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/transactions-history/transactions-history.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="431754603527871171">
+  <source>Please enter "To Account" and "Amount"</source>
+  <target>Voer "Naar account" en "Bedrag" in</target>
+</trans-unit>
+<trans-unit id="5493767183712993420">
+  <source>Please enter "To Account"</source>
+  <target>Voer "Naar account" in</target>
+</trans-unit>
+<trans-unit id="3528119848811362922">
+  <source>Please enter "Amount"</source>
+  <target>Voer "Bedrag" in</target>
+</trans-unit>
+<trans-unit id="1566262027148690481">
+  <source>Please enter valid "Amount"</source>
+  <target>Voer een geldig "Bedrag" in</target>
+</trans-unit>
+<trans-unit id="2115086537131834221">
+  <source>Overdraft amount cannot be more then 500</source>
+  <target>Het debetbedrag mag niet hoger zijn dan 500</target>
+</trans-unit>
+    </body>
+  </file>
+</xliff>
