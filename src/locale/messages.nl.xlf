@@ -95,6 +95,62 @@
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="to_account_error" datatype="html">
+        <source>Please enter &quot;To Account&quot;</source>
+        <target>Voer naar account in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_error" datatype="html">
+        <source>Please enter &quot;Amount&quot;</source>
+        <target>Voer een bedrag in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_min_error" datatype="html">
+        <source>Account name should be minimum 3 character</source>
+        <target>Accountnaam moet minimaal 3 tekens lang zijn</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_account_max_error" datatype="html">
+        <source>Account name can not be more than 60 characters</source>
+        <target>Accountnaam mag niet langer zijn dan 60 tekens</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_max_error" datatype="html">
+        <source>Max amount tranfer possible is 99999</source>
+        <target>Het maximale bedrag dat kan worden overgemaakt is 99999</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_valid_error" datatype="html">
+        <source>Please enter valid &quot;Amount&quot;</source>
+        <target>Het maximale bedrag dat kan worden overgemaakt is 99999</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_overdraft_error" datatype="html">
+        <source>Overdraft amount cannot be more then 500</source>
+        <target>Het debetbedrag kan niet hoger zijn dan 500</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-transaction/make-transaction.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="submit" datatype="html">
         <source>Submit</source>
         <target>Verzenden</target>

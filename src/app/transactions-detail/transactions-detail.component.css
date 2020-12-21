@@ -1,57 +1,55 @@
 ul {
-    margin-top:100px;
-    border-top: 2px solid #CACACA;
-    border-right: 2px solid #CACACA;
+  margin-top: 100px;
+  border-top: 2px solid #cacaca;
+  border-right: 2px solid #cacaca;
 }
 li {
-    display: table;
-    width: 100%;
+  display: table;
+  width: 100%;
 }
 li span {
-    display: table-cell;
-    vertical-align: middle;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: 2px solid #CACACA;
+  display: table-cell;
+  vertical-align: middle;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 2px solid #cacaca;
 }
 
 ul li .bar {
-    width: 10px;
-    border-bottom: none;
+  width: 10px;
+  border-bottom: none;
 }
 
 ul li .date {
-    text-align: center;
+  text-align: center;
 }
 ul li .amount {
-    text-align: right;
-    padding-right: 10px;
-    font-weight: 700;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: 700;
 }
 
 ul li .transactionType {
-    text-align: left;
+  text-align: left;
 }
 ul li .amount,
 ul li span p {
-    font-size: 16px;
+  font-size: 16px;
 }
 ul li span p strong {
-    line-height:  20px;
-    display: block;
-    font-weight: 700;
+  line-height: 20px;
+  display: block;
+  font-weight: 700;
 }
 
 ul li .amount,
 ul li .date,
 ul li .image {
-    width: 12%;
+  width: 14%;
 }
 
 @media only screen and (max-width: 500px) {
-
-ul li .amount {
+  ul li .amount {
     width: 25%;
-}
-    
   }
+}

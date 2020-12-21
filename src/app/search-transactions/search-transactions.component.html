@@ -1,14 +1,23 @@
 <div class="container-search">
-    <div class="search">
-        <input type="search" #searchInput (keyup)="keyUpSubject.next(searchInput.value)" (search)="keyUpSubject.next(searchInput.value)" i18n-placeholder="@@search_by_typing_place" placeholder="Search by typing.." />
+  <div class="search">
+    <input
+      type="search"
+      #searchInput
+      (keyup)="keyUpSubject.next(searchInput.value)"
+      (search)="keyUpSubject.next(searchInput.value)"
+      i18n-placeholder="@@search_by_typing_place"
+      placeholder="Search by typing.."
+    />
+  </div>
+
+  <div class="search-filter">
+    <div class="filters">
+      <i i18n="@@sort_by">Sort by</i>
+      <span #date (click)="filter(1)" i18n="@@date">Date</span>
+      <span #beneficiaries (click)="filter(2)" i18n="@@beneficiaries"
+        >Beneficiaries</span
+      >
+      <span #amount (click)="filter(3)" i18n="@@amount">Amount</span>
     </div>
-    
-    <div class="search-filter">
-        <div class="filters">
-            <i i18n="@@sort_by">Sort by</i>
-            <span #date (click)="filter(1)" i18n="@@date">Date</span>
-            <span #beneficiaries (click)="filter(2)" i18n="@@beneficiaries">Beneficiaries</span>
-            <span #amount (click)="filter(3)" i18n="@@amount">Amount</span>
-        </div>
-    </div>
+  </div>
 </div>

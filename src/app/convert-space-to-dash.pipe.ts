@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'removewhitespace'
+  name: 'convertspacetodash'
 })
-export class RemoveWhiteSpacePipe implements PipeTransform {
+export class ConvertSpaceToDashPipe implements PipeTransform {
 
   transform(value: string, args?: any): string {
     return value.replace(/ /g, '-');

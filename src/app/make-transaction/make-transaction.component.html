@@ -1,25 +1,70 @@
-<h3 i18n="@@make-transer">
-    Make a Transfer
-</h3>
-<form>
-    <fieldset>
-        <label i18n="@@from_account">From Account</label>
-        <input type="text" i18n-placeholder="@@from_account_place" placeholder="Free Checking(4692) - ${{initialAmount}}" disabled>
-    </fieldset>
+<h3 i18n="@@make-transer">Make a Transfer</h3>
+<form
+  [formGroup]="addTransferFormGroup"
+  (ngSubmit)="preview($event)"
+  class="example-form"
+>
+  <fieldset>
+    <label i18n="@@from_account">From Account</label>
+    <input
+      type="text"
+      i18n-placeholder="@@from_account_place"
+      placeholder="Free Checking(4692) - ${{ initialAmount }}"
+      disabled
+    />
+  </fieldset>
 
-    <fieldset>
-        <label i18n="@@to_account">To Account</label>
-        <input name="accountName"
-        [(ngModel)]="accountName" required i18n-placeholder="@@to_account_place" placeholder="Please enter name">
-    </fieldset>
+  <fieldset>
+    <label i18n="@@to_account">To Account</label>
+    <input
+      name="accountName"
+      formControlName="accountName"
+      [(ngModel)]="accountName"
+      required
+      i18n-placeholder="@@to_account_place"
+      placeholder="Please enter name"
+    />
+  </fieldset>
 
-    <fieldset>
-        <label i18n="@@amount">Amount</label>
-        <input type="text"  [(ngModel)]="amount" i18n-placeholder="@@amount_place" name="amount" required placeholder="$ 0.00">
-    </fieldset>
-    <fieldset *ngIf="hasError">
-        <label class="error" i18n="@@error_message">{{errorMessage}}</label>
-    </fieldset>
-    <button (click)="preview($event)" i18n="@@submit">Submit</button>
-    
+  <fieldset>
+    <label i18n="@@amount">Amount</label>
+    <input
+      type="text"
+      [(ngModel)]="amount"
+      i18n-placeholder="@@amount_place"
+      name="amount"
+      formControlName="amount"
+      required
+      placeholder="$ 0.00"
+    />
+  </fieldset>
+  <div *ngIf="validationErrorExists()" class="error">
+    <div *ngIf="hasError('accountName', 'required')" i18n="@@to_account_error">Please enter "To Account"</div>
+    <div *ngIf="hasError('amount', 'required')" i18n="@@amount_error">Please enter "Amount"</div>
+    <div
+      *ngIf="hasError('accountName', 'minlength')"
+      i18n="@@to_account_min_error"
+    >
+      Account name should be minimum 3 character
+    </div>
+    <div
+      *ngIf="hasError('accountName', 'maxlength')"
+      i18n="@@to_account_max_error"
+    >
+      Account name can not be more than 60 characters
+    </div>
+    <div *ngIf="hasError('amount', 'maxlength')" i18n="@@amount_max_error">
+      Max amount tranfer possible is 99999
+    </div>
+    <div *ngIf="hasError('amount', 'pattern')" i18n="@@amount_valid_error">
+      Please enter valid "Amount"
+    </div>
+    <div
+      *ngIf="hasError('amount', 'overdraftDifferenceValidator')"
+      i18n="@@amount_overdraft_error"
+    >
+      Overdraft amount cannot be more then 500
+    </div>
+  </div>
+  <button (click)="preview($event)" i18n="@@submit">Submit</button>
 </form>

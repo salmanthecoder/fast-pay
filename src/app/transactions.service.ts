@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import {Transaction} from "./model/Transaction";
-import { map } from "rxjs/operators"; 
+import {Transaction} from './model/Transaction';
+import { map } from 'rxjs/operators';
 
 
 @Injectable()
@@ -11,17 +11,17 @@ export class TransactionsService {
 
   transactions: Transaction[];
   public observableTransactions: BehaviorSubject<Transaction[]>;
-  constructor(private _http: HttpClient) {
-    this.observableTransactions = <BehaviorSubject<Transaction[]>>new BehaviorSubject([]);
+  constructor(private http: HttpClient) {
+    this.observableTransactions = (new BehaviorSubject([]) as BehaviorSubject<Transaction[]>);
     this.get();
    }
 
   get(): Observable<Transaction[]> {
-    if(this.transactions && this.transactions.length !=0) {
+    if (this.transactions && this.transactions.length !== 0) {
       return this.observableTransactions;
     }
-    return this._http.get('/api/data')
-    .pipe(map((res:any) => {
+    return this.http.get('/api/data')
+    .pipe(map((res: any) => {
       this.transactions = res.data;
       this.observableTransactions.next(Object.assign([], this.transactions));
       return this.transactions;
@@ -32,9 +32,9 @@ export class TransactionsService {
     return this.get();
   }
 
-  addTransactions(transaction: Transaction) {
+  addTransactions(transaction: Transaction): void {
     const currentValue = this.observableTransactions.value;
-        const updatedValue = [transaction, ...currentValue];
-        this.observableTransactions.next(updatedValue);
+    const updatedValue = [transaction, ...currentValue];
+    this.observableTransactions.next(updatedValue);
   }
 }

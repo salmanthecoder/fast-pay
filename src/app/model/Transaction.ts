@@ -9,17 +9,16 @@ interface TransactionData {
   amountCurrency: AmountCurrency;
   creditDebitIndicator: string;
   type: string;
-
 }
 
 interface Dates {
-  valueDate : any
+  valueDate: any;
 }
 interface AmountCurrency {
-  amount: number,
-  currencyCode: string
+  amount: number;
+  currencyCode: string;
 }
 interface Merchant {
-  name: string,
-  accountNumber: string
+  name: string;
+  accountNumber: string;
 }

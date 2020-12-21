@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CreditDebitIndicatorPipe implements PipeTransform {
 
   transform(value: any, indicator: string): any {
-    return indicator && indicator === 'DBIT' ? -value: value;
+    return indicator && indicator === 'DBIT' ? -value : value;
   }
 
 }
