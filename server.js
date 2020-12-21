@@ -4,13 +4,13 @@ const path = require('path');
 
 const app = express();
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/fast-pay'));
+app.use(express.static(__dirname + '/dist/fast-payment'));
 let locale;
 app.get('/api/data/', (req, res) => {
     console.log(res)
   
     /* Just send the file */
-    res.sendFile(path.join(__dirname, `/dist/fast-pay/nl/assets/mock`, 'transactions.json'));
+    res.sendFile(path.join(__dirname, `/dist/fast-payment/nl/assets/mock`, 'transactions.json'));
 });
 app.get('*', (req, res) => {
 
@@ -23,7 +23,7 @@ app.get('*', (req, res) => {
   const locale = (matches && supportedLocales.indexOf(matches[1]) !== -1) ? matches[1] : defaultLocale;
   
     /* Just send the file */
-    res.sendFile(path.join(__dirname, `/dist/fast-pay/${locale}`, 'index.html'));
+    res.sendFile(path.join(__dirname, `/dist/fast-payment/${locale}`, 'index.html'));
 });
 
 // Start the app by listening on the default Heroku port

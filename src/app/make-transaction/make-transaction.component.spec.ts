@@ -61,7 +61,7 @@ describe('MakeTransactionComponent', () => {
     component.accountName = 'test';
     const overdraftDifference = component.overdraftDifference();
     fixture.detectChanges();
-    expect(overdraftDifference).toBe('5774.76');
+    expect(overdraftDifference).toBe(5774.76);
   });
 
   it('should get error if amount is not filled', () => {

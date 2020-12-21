@@ -53,3 +53,7 @@ ul li .image {
     width: 25%;
   }
 }
+
+.error {
+    padding-top:20px;
+}

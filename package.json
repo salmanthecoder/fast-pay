@@ -1,12 +1,11 @@
 {
-  "name": "fast-pay",
-  "version": "1.0.0",
+  "name": "fast-payment",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "start-local": "ng serve --configuration=production",
     "start:nl": "ng serve --configuration=nl",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
