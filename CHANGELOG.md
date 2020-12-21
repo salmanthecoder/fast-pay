@@ -1,3 +1,9 @@
+## 1.0.2 (2020-12-21)
+
+### Features
+
+- added path and express dependency for heroku
+
 ## 1.0.1 (2020-12-21)
 
 ### Features
