@@ -1,3 +1,9 @@
+## 1.0.4 (2020-12-27)
+
+### Features
+
+- fixed mobile design for logo
+
 ## 1.0.3 (2020-12-27)
 
 ### Features
