@@ -1,7 +1,16 @@
-<ng-container *ngFor="let language of languageList">
-  <a href="/{{ language.code }}/" class="lang">
-    <button class="button">{{ language.label }}</button>
-  </a></ng-container
+<ng-container >
+  <div *ngFor="let language of languageList">
+    <a href="/{{ language.code }}/" class="lang">
+      <button class="button">{{ language.label }}</button>
+    </a>
+  </div>
+    <div class="header">
+      <a href="#">
+        <img height="30px" src="./assets/logo.jpg" alt="logo">
+      </a>
+    </div>
+  
+  </ng-container
 >
 <section class="container">
   <div class="make-transaction">
