@@ -14,7 +14,7 @@ import { ValidatorOneParam } from './validation';
 export class MakeTransactionComponent implements OnInit {
   initialAmount = 5824.76;
   accountName: string;
-  amount: string;
+  amount: number;
   errorMessage = '';
   formSubmitted = false;
   public addTransferFormGroup: FormGroup;
@@ -89,7 +89,7 @@ export class MakeTransactionComponent implements OnInit {
    */
   reset(): void {
     this.initialAmount = this.overdraftDifference();
-    this.amount = '';
+    this.amount = 0;
     this.accountName = '';
     this.formSubmitted = false;
   }
@@ -100,7 +100,7 @@ export class MakeTransactionComponent implements OnInit {
    * @returns float
    */
   overdraftDifference(): any {
-    const diff = Number(this.initialAmount) - parseFloat(this.amount);
+    const diff = (this.initialAmount) - (this.amount);
     return Number(diff.toFixed(2));
   }
 
@@ -112,7 +112,7 @@ export class MakeTransactionComponent implements OnInit {
   overdraftDifferenceValidator(initialAmount: number): ValidatorOneParam {
     return (control: AbstractControl): ValidationErrors | null => {
       const amount = control.value;
-      const diff = this.initialAmount - parseFloat(amount);
+      const diff = this.initialAmount - (amount);
       if (Number(diff.toFixed(2)) < -GlobalConstants.overdraft) {
         return { overdraftDifferenceValidator: true };
       }

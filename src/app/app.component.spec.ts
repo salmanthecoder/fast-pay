@@ -22,13 +22,4 @@ describe('AppComponent', () => {
       compiled.querySelector('a:nth-child(1) > button').textContent
     ).toContain('EN');
   });
-
-  it('should render make transaction title NL', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(
-      compiled.querySelector('a:nth-child(2) > button').textContent
-    ).toContain('NL');
-  });
 });

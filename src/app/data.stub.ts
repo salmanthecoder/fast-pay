@@ -1,4 +1,4 @@
-import {  Observable, of, BehaviorSubject} from 'rxjs';
+import {  Observable, of, Subject} from 'rxjs';
 import { Transaction } from 'src/app/model/Transaction';
 export const testData = {
   data: [{
@@ -58,10 +58,9 @@ export const testData = {
 };
 
 export class DataStub {
-  public observableTransactions: BehaviorSubject<Transaction[]>;
+  public observableTransactions: Subject<Transaction[]>;
   constructor() {
-    this.observableTransactions = (new BehaviorSubject([]) as BehaviorSubject<Transaction[]>);
-    this.get();
+    this.observableTransactions = new Subject<Transaction[]>();
    }
 
   public get(): Observable<Transaction[]> {
@@ -69,9 +68,5 @@ export class DataStub {
         observer.next(testData);
         observer.complete();
     });
-  }
-
-  getTransactions(): Observable<Transaction[]> {
-    return this.get();
   }
 }

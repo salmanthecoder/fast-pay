@@ -17,6 +17,6 @@ export class TransactionsHistoryComponent implements OnInit {
     this.transactionsService.observableTransactions.subscribe((value) => {
       this.transactions = of(value);
     });
-    this.transactions = this.transactionsService.getTransactions();
+    this.transactions = this.transactionsService.get();
   }
 }

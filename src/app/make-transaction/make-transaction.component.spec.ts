@@ -37,7 +37,7 @@ describe('MakeTransactionComponent', () => {
 
   it('should call preview', () => {
     spyOn(component, 'showDialog');
-    component.amount = '50';
+    component.amount = 50;
     component.accountName = 'test';
     const event = new Event('new event');
     fixture.whenStable().then(() => {
@@ -49,7 +49,7 @@ describe('MakeTransactionComponent', () => {
   });
 
   it('should call reset', () => {
-    component.amount = '50';
+    component.amount = 50;
     component.accountName = 'test';
     component.reset();
     fixture.detectChanges();
@@ -57,7 +57,7 @@ describe('MakeTransactionComponent', () => {
   });
 
   it('should call overdraftDifference', () => {
-    component.amount = '50';
+    component.amount = 50;
     component.accountName = 'test';
     const overdraftDifference = component.overdraftDifference();
     fixture.detectChanges();
@@ -66,7 +66,7 @@ describe('MakeTransactionComponent', () => {
 
   it('should get error if amount is not filled', () => {
     const compiled = fixture.debugElement.nativeElement;
-    component.amount = '';
+    component.amount = 0;
     component.accountName = 'test';
     const event = new Event('new event');
     component.preview(event);
@@ -78,7 +78,7 @@ describe('MakeTransactionComponent', () => {
 
   it('should get error if accountName is not filled', () => {
     const compiled = fixture.debugElement.nativeElement;
-    component.amount = '50';
+    component.amount = 50;
     component.accountName = '';
     const event = new Event('new event');
     component.preview(event);
@@ -90,7 +90,7 @@ describe('MakeTransactionComponent', () => {
 
   it('should get error if accountName and amount is not filled', () => {
     const compiled = fixture.debugElement.nativeElement;
-    component.amount = '';
+    component.amount = 0;
     component.accountName = '';
     const event = new Event('new event');
     component.preview(event);

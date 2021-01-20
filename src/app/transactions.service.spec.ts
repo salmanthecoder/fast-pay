@@ -48,7 +48,7 @@ describe('TransactionsService', () => {
           }
     ]
     };
-      treeService.getTransactions()
+      treeService.get()
         .subscribe((data: any) => {
           expect(data.length).toBe(1);
         });
@@ -82,7 +82,7 @@ describe('TransactionsService', () => {
             }
       ]
       };
-        treeService.getTransactions()
+        treeService.get()
           .subscribe((data: any) => {
             expect(data.length).toBe(1);
             expect(data[0].merchant.name).toEqual('Backbase');
@@ -111,12 +111,12 @@ describe('TransactionsService', () => {
               }
             };
         treeService.addTransactions(testDatatoAdd);
-        treeService.getTransactions()
+        treeService.observableTransactions
           .subscribe((data: any) => {
             expect(data.length).toBe(2);
             expect(data[0].merchant.name).toEqual('TestData');
             expect(data[1].merchant.name).toEqual('Backbase');
           });
-        httpMock.verify();
+
       })));
 });

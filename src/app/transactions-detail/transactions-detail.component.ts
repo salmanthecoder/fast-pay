@@ -113,8 +113,8 @@ export class TransactionsDetailComponent implements OnInit {
   handleSortAmount(): void {
     this.sortByAmount = !this.sortByAmount;
     this.transactionsDetails = this.transactionsDetails.sort((a, b) => {
-      const amountA = parseFloat(a.transaction.amountCurrency.amount);
-      const amountB = parseFloat(b.transaction.amountCurrency.amount);
+      const amountA = (a.transaction.amountCurrency.amount);
+      const amountB = (b.transaction.amountCurrency.amount);
       // this.sortByAmount => false is desecnding
       if (this.sortByAmount) {
         return amountA - amountB;

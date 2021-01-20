@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs';
 import {Transaction} from './model/Transaction';
 import { map } from 'rxjs/operators';
 
@@ -10,16 +10,14 @@ import { map } from 'rxjs/operators';
 export class TransactionsService {
 
   transactions: Transaction[];
-  public observableTransactions: BehaviorSubject<Transaction[]>;
+  public observableTransactions: Subject<Transaction[]> ;
   constructor(private http: HttpClient) {
-    this.observableTransactions = (new BehaviorSubject([]) as BehaviorSubject<Transaction[]>);
-    this.get();
+    this.observableTransactions = new Subject<Transaction[]>();
    }
 
   get(): Observable<Transaction[]> {
-    if (this.transactions && this.transactions.length !== 0) {
-      return this.observableTransactions;
-    }
+
+    ///assets/mock/transactions.json
     return this.http.get('/api/data')
     .pipe(map((res: any) => {
       this.transactions = res.data;
@@ -28,12 +26,8 @@ export class TransactionsService {
     }));
   }
 
-  getTransactions(): Observable<Transaction[]> {
-    return this.get();
-  }
-
   addTransactions(transaction: Transaction): void {
-    const currentValue = this.observableTransactions.value;
+    const currentValue = this.transactions;
     const updatedValue = [transaction, ...currentValue];
     this.observableTransactions.next(updatedValue);
   }
